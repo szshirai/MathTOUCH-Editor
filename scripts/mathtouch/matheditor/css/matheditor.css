@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+html, body {
+    margin-bottom:0;
+}
+
+
+#mt_caret{
+    border-right:solid 2px #1e90ff;
+}
+
+.modifyeq{
+    opacity: 0.4;
+}
+
+.mteq img{
+    vertical-align: middle;
+    z-index: 9999;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.mteq:hover{
+    background:#f0f8ff;
+    border:0.5px solid  #87cefa;
+    cursor: pointer;
+}
+
+.mteditor{
+    position: relative;
+    width:621px;
+}
+
+.editarea{
+    line-height:2;
+    height:300px;
+    background-color:#FFF;
+    overflow:scroll;
+    border: solid 1px #ddd;
+    margin:0 auto;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.editarea p{
+    margin:0 auto;
+    padding:0 auto;
+    line-height:1.5;
+}
+
+.btn_menu{
+    width:621px;
+    height:30px;
+    margin:0px;
+    padding:0px;
+    background: #f5f5f5;
+    float:left;
+    border: solid 1px #ddd;
+}
+
+.mtselect {
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    height: 30px;
+    float: left;
+    min-width:100px;
+    margin:0px;
+    padding: 0px 10px;
+    font-size: 12px;
+    color:#696969;
+    border-radius:0px;
+    background: #f5f5f5;
+    background-image: none;
+    border:none;
+    border-bottom: solid 1px #ddd;
+    -ms-word-break: normal;
+    word-break: normal;
+}
+
+.mtcustom-select:last-child{
+  border-right: 1px solid #ddd;
+}
+
+.mtcustom-select{
+    position:relative;
+    float: left;
+    border:none;
+    margin:0px;
+    background: #f5f5f5;
+    border-left:1px solid #ddd;
+}
+
+.mtcustom-select:before {
+    z-index: 1;
+    position: absolute;
+    margin:0px;
+    right: 10px;
+    top: 0;
+    content: "\25BC";
+    line-height: 35px;
+    color: #00BCD4;
+    font-size:9px;
+    pointer-events: none;
+}
+
+.mteditorbtn{
+    font-weight: bold;
+    text-align:center;
+    border:none;
+    border-left:1px solid #ddd;
+    text-decoration: none;
+    color: #00BCD4;
+    background: #f5f5f5;
+    float:left;
+    width:30px; /*moodleでは30px*/
+    height:30px; /*moodleでは30px*/
+    padding: 5px;
+    margin: 0px;
+    transition: .4s;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.mteditorbtn:last-child{
+  border-right: 1px solid #ddd;
+}
+
+.mteditorbtn:hover {
+    background: #bce5eb;
+    color: #FFF;
+    cursor : pointer;
+}
+
+
+.mt_Button{
+    display: inline-block;
+    cursor : pointer;
+    background-repeat: no-repeat;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    border:none;
+    border-right: 1px solid #ddd;
+}
+
+.mt_Button:hover {
+    background: #bce5eb;
+    color: #FFF;
+    cursor : pointer;
+}
+
+
+#img.mt_Button{
+    border:none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+
+#mt_Button{
+
+        background-color: transparent;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                padding: 0;
+                appearance: none;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.imgmenu_contents{
+    text-align: left;
+    padding:10px 50px;
+}
+
+.imgmenu{
+    display: none;
+    font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+    z-index:70;
+    padding:20px;
+    font-size:0.8em;
+    background-color:#f5f5f5;
+    border:solid 1px #a9a9a9;
+    text-align: center;
+    border-radius:10px;
+    margin: 10% auto;
+    width: 40%;
+    min-width:450px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
+    animation-name: modalopen;
+    animation-duration: 0.2s;
+}
+
+.imgmenu h2{
+    font-size:1.8em;
+    font-weight:100;
+}
+
+.imgmenu h3{
+    font-size:1.2em;
+    font-weight:100;
+}
+
+#imgMenu_url{
+    width:250px;
+    height:20px;
+}
+
+#imgMenu_alt{
+    width:400px;
+    height:20px;
+    overflow: auto;
+}
+
+#imgMenu_h, #imgMenu_w{
+    width:100px;
+    height:20px;
+}
+
+#imgMenu_alt:focus, #imgMenu_h:focus, #imgMenu_w:focus, #imgMenu_url:focus {
+    box-shadow: 0 0 5px 0 rgba(26, 123, 249,1);
+    border: 2px solid #FFF !important;
+    outline: 0;
+}
+
+#imgMenu_insertButtonDIV{
+    padding-top:40px;
+    text-align:center;
+}
+
+
+#imgMenu_insertButton, #imgMenu_cancelButton{
+    color: #fff;
+    font-size:1.2em;
+    background-color: #5ab898;
+    border-radius: 10px;
+    border:solid 2px #5ab898;
+    padding:6px 10px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    margin:10px;
+  }
+
+#imgMenu_insertButton:hover{
+    color: #5ab898;
+    background: #dff5ed;
+    border:solid 2px #5ab898;
+    
+}
+
+#imgMenu_cancelButton{
+    color: #696969;
+    background-color: #dcdcdc;
+    border:solid 2px #a9a9a9;
+}
+
+#imgMenu_url_BTN{
+    color: #696969;
+    font-size:0.8em;
+    background-color: #dcdcdc;
+    border:solid 1px #a9a9a9;
+    border-radius:3px;
+    padding:6px 10px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+#imgMenu_url_BTN:hover, #imgMenu_cancelButton:hover{
+    background-color: #f5f5f5;
+}
+
+#mt_previewIMG:before{
+    color: red;
+    content: "画像のURLが正しいか確認してください。"
+}

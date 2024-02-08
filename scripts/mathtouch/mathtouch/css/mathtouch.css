@@ -1,0 +1,1128 @@
+@charset "utf-8";
+html, body {
+    margin-bottom:0;
+}
+
+#mt_keyboard{
+    z-index:1000;
+    position: absolute;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin:0 auto;
+    width:480px;
+    height:370px;/*340*/
+    background-color:#e8e8e8;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+    font-weight: 300;
+    font-size:1.2em;
+    margin:0px 0px;
+    padding:0px 0px;
+    border-radius: 5px 5px 5px 5px;
+    border-right:1px solid #c9c9c9;
+    border-left:1px solid #c9c9c9;
+    overflow:hidden
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
+
+#mt_keyboard #mtkeyboard_inner{
+    position:relative;
+    display: inline-block;
+    width: 100%;
+    height:100%;
+    text-align:center;
+    margin:0px 0px;
+    padding:0px 0px;
+}
+
+#mt_keyboard #mtkeyboard_titlebar, #mtkeyboard_menubar{
+    position:relative;
+    display: table;
+    width:100%;
+    border-bottom:1px solid #c9c9c9;
+}
+
+#mt_keyboard #mtkeyboard_titlebar_inner{
+    background-color: #E6E6E6;
+    display: table-cell;
+    vertical-align: middle;
+    font-size:0.5em;
+    height:30px;
+    width:100%;
+    border-radius: 5px 5px 0px 0px;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
+
+
+#mt_keyboard #mtkeyboard_menubar_inner{
+    background-color: #f5f5f5;
+    display: table-cell;
+    vertical-align: middle;
+    font-size:0.5em;
+    height:30px;
+    width:100%;
+    border-radius: 5px 5px 0px 0px;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
+#mt_keyboard #mtkeyboard_titlebar_closeA{
+    margin-top:7px;
+    margin-left:10px;
+    float:left;
+    background-color:#eb5e55;
+    font-size: 100%;/*ボタンの大きさ*/
+    font-weight: bold;
+    border: 1px solid #d54842;
+    color: #eb5e55;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 100%;
+    width: 1.3em;
+    line-height: 1.3em;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#mt_keyboard #mtkeyboard_titlebar_closeA:hover{
+    color: #696969;
+}
+
+#mt_keyboard .mt_menubar_icon:hover, .mt_menubar_icon_right:hover{
+    background-color:#E6E6E6;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: .2s;
+}
+
+#mt_keyboard .mt_titlebar_icon:hover{
+    background-color:#d1d1d1;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: .2s;
+}
+
+#mt_keyboard .mt_menubar_iconIMG, .mt_titlebar_iconIMG{
+    height: 15px;
+}
+
+#mt_keyboard .mt_menubar_icon, .mt_titlebar_icon{
+    float:left;
+    margin-left:10px;
+    margin-top:2px;
+    padding:4px;
+    cursor: pointer;
+}
+
+#mt_keyboard .mt_menubar_icon_right{
+    float:right;
+    margin-right:10px;
+    margin-top:2px;
+    padding:4px;
+    cursor: pointer;
+}
+
+#mt_keyboard .mt_menubar_icon_right_on{
+    float:right;
+    margin-right:10px;
+    margin-top:2px;
+    padding:4px;
+    cursor: pointer;
+    background-color:#E6E6E6;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    transition: .2s;
+}
+
+#mt_keyboard .mt_menubar_textbutton{
+    margin:0px 0px;
+    padding:5px 10px;
+    float:left;
+    font-size:1.15em;
+    cursor: pointer;
+}
+
+#mt_keyboard .mt_menubar_textbutton_on{
+    margin:0px 0px;
+    padding:5px 10px;
+    float:left;
+    font-size:1.15em;
+    background-color:#E6E6E6;
+    transition: .2s;
+    cursor: pointer;
+}
+
+#mt_keyboard .mt_menubar_textbutton:hover{
+    background-color:#E6E6E6;
+    transition: .2s;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu{
+    position:absolute;
+    top:30px; left:50px; z-index: 9999;
+    height:200px;
+    width:300px;
+    border: 1px solid #E6E6E6;
+    background-color:#fff;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+    font-weight: 300;
+    font-size:1.2em;
+    margin:0px 0px;
+    padding:0px 0px;
+    border-radius: 5px 5px 5px 5px;
+    border-right:1px solid #c9c9c9;
+    border-left:1px solid #c9c9c9;
+    overflow: scroll;
+    display:none;
+}
+
+#mt_keyboard #mtkeyboard_menubar_settings_menu{
+    position:absolute;
+    top:30px; right:-270px; z-index: 9999;
+    height:200px;
+    width:300px;
+    border: 1px solid #E6E6E6;
+    background-color:#fff;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+    font-weight: 300;
+    font-size:1.2em;
+    margin:0px 0px;
+    padding:0px 0px;
+    border-radius: 5px 5px 5px 5px;
+    border-right:1px solid #c9c9c9;
+    border-left:1px solid #c9c9c9;
+    overflow-y: scroll;
+    display:none;
+}
+
+#mt_keyboard #mtkeyboard_menubar_edit_menuarea{
+    position:absolute;
+    top:30px; left:0px; z-index: 9999;
+    height:60px;
+    width:100px;
+    border: 1px solid #E6E6E6;
+    background-color:#fff;
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.3);
+    font-weight: 300;
+    font-size:1.2em;
+    margin:0px 0px;
+    padding:0px 0px;
+    border-radius: 5px 5px 5px 5px;
+    border-right:1px solid #c9c9c9;
+    border-left:1px solid #c9c9c9;
+    overflow-y: scroll;
+    display:none;
+}
+
+#mt_keyboard #mtkeyboard_menubar_edit_menuarea ul{
+    padding:5px 0px 0px;
+    margin:0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu_eqarea ul{
+    padding:0px;
+    margin:0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_settings_menu_menuarea ul{
+    padding:5px 0px 0px;
+    margin:0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu_eqarea li.history_eq, #mtkeyboard_menubar_settings_menu_menuarea li.settings_menuli, #mtkeyboard_menubar_edit_menuarea li.edit_menuli{
+    list-style:none;
+    display: list-item;
+    border: none;
+    box-shadow:none;
+    text-align:left;
+    margin:0px 0px;
+    padding:8px 10px 8px 10px;
+    font-size:1em;
+}
+
+#mt_keyboard #mtkeyboard_menubar_edit_menuarea li.edit_menuli{
+    list-style:none;
+    display: list-item;
+    border: none;
+    box-shadow:none;
+    text-align:left;
+    margin:0px 0px;
+    padding:5px 10px;
+    font-size:0.8em;
+}
+
+#mt_keyboard #mtkeyboard_menubar_edit_menuarea li.edit_menuli:hover{
+    background-color:#E6E6E6;
+    border-radius:0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu_eqarea li.history_eq:hover, #mtkeyboard_menubar_settings_menu_menuarea li.settings_menuli:hover{
+    background-color:#E6E6E6;
+    border-radius:0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu_h5area{
+    text-align: left;
+    border-bottom: 1px solid #E6E6E6;
+    margin:0px 0px;
+    padding:5px 0px;
+}
+
+#mt_keyboard #mtkeyboard_menubar_history_menu_h5area h5{
+    margin:0px 0px;
+    padding:0px 5px;
+}
+
+#mt_keyboard .mtcanvas{
+    display: table-cell;
+    background-color:#FFF;
+    vertical-align: middle;
+    /*width:100%;*/
+}
+
+#mt_keyboard #mtkeyboard_canvas{
+    z-index:1001;
+    position:relative;
+    background-color:#FFF;
+    vertical-align: middle;
+    width:100%;
+}
+
+#mt_keyboard #mtkeyboard_candidates{
+    position:relative;
+    height:45px;
+    line-height: 45px;
+    width:100%;
+    background-color:#F7F7F7;
+    margin: 0px auto;
+    float:left;
+    text-align:left;
+    border-top:1px solid #c9c9c9;
+    border-bottom:1px solid #c9c9c9;
+    font-size: 0.8em;
+}
+
+#mt_keyboard #mtkeyboard_candidates #mt_areaR{
+    position:relative;
+    float:right;
+    width:8%;
+    height:100%;
+    margin:0 auto;
+    text-align: center;
+    margin: 0 auto;
+    z-index:100;
+    cursor:pointer;
+    background-color:#E6E6E6;
+    outline:1px solid  #c9c9c9;
+}
+
+#mt_keyboard #mtkeyboard_candidates #mt_areaL{
+    position; relative;
+    float:left;
+    width:90%;
+    height:100%;
+    overflow-x:fixed;
+    overflow-y:auto;
+    z-index:0;
+}
+
+#mt_keyboard #mtkeyboard_candidates #mt_areaL::-webkit-scrollbar{
+  display: none;
+}
+
+.mtcnd_exp{
+    /*background-image: linear-gradient( #E6E6E6 .1em, transparent .1em );*/
+    background-size: auto 40px;
+    line-height: 40px;
+    height:100%;
+}
+
+.mt_std{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    word-wrap:normal;
+    -webkit-overflow-scrolling: touch;
+}
+
+#mt_keyboard #mtkeyboard_candidates #mtkeyboard_candidates_ul{
+    width:100%;
+    display: flex;
+    position:relative;
+    list-style-type: none;
+    list-style-position:outside;
+    margin: 0;
+    padding:0;
+    float:left;
+    text-align:left;
+}
+
+#mt_keyboard #mtkeyboard_candidates #mtkeyboard_candidates_ul li{
+    display:inline-block;
+    float: left;
+    text-align:center;
+    vertical-align: middle;
+    padding: 0px 20px 0px 20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    list-style: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+img.candidatesStyleIMG{
+    height: 25px;
+    vertical-align:middle;
+}
+
+#mt_keyboard #mtkeyboard_candidates li.nomal{
+    background-color:#fff;
+    color:#000;
+}
+
+#mt_keyboard #mtkeyboard_candidates li:hover{
+    background-color:#C7C7CC;
+}
+
+#mt_keyboard #mtkeyboard_candidates img{
+    background: none;
+    background-color: none;
+}
+
+#mt_keyboard #mtkeyboard_candidates li.selected{
+    background-color:#C7C7CC;
+}
+
+img.mt_key-up{
+    height:10px;
+}
+
+img.mt_undo{
+    height:15px;
+}
+
+
+#mt_keyboard #mt_area1{
+    margin:0px;
+    padding:0px;
+    clear:both;
+    text-align: center;
+    width:100%;
+    height:170px;
+}
+
+#mt_keyboard #mt_area1 ul{
+    margin:0px;
+    padding:0px;
+}
+
+#mt_keyboard li{
+    display: inline-block;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    cursor:pointer;
+    margin:0px 0px;
+    padding:0px 0px;
+}
+
+#mt_keyboard .mt_key10{
+    display: inline-block;
+    text-align:center;
+    background-color:#FFF;
+    width:8%;
+    line-height: 35px;
+    height: 35px;
+    margin: 4px 3px;
+    vertical-align: middle;
+    font-family: "Times New Roman";
+}
+
+#mt_keyboard .mt_key10 img{
+    height: 40px;
+}
+
+#mt_keyboard .mt_key5{
+    background-color:#FFF;
+    width: 15%;
+    line-height: 35px;
+    height: 35px;
+    margin: 4px 3px;
+    font-size:0.8em;
+}
+
+#mt_keyboard .opekeyColor{
+    background-color:#c2c2c2;
+}
+
+
+#mt_keyboard .mt_key10:active,#mt_keyboard .mt_key5:active{
+    background-color:#DBDDDE;
+}
+
+#mt_keyboard .mt_opKB_arrow{
+    background-color:#c2c2c2;
+    margin:4px 3px;
+    vertical-align: baseline;
+    width: 13%;
+    height:30px;
+    line-height: 30px;
+    font-size:0.8em;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+#mt_keyboard .mt_opKB_enter{
+    background-color:#4aaded;
+    color:#FFF;
+    margin:4px 3px;
+    vertical-align: baseline;
+    width: 13%;
+    height:30px;
+    line-height: 30px;
+    font-size:0.8em;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+#mt_keyboard .mt_opKB{
+    background-color:#c2c2c2;
+    margin:4px 3px;
+    vertical-align: baseline;
+    width: 8%;
+    line-height: 35px;
+    height:35px;
+    
+}
+
+#mt_keyboard .mt_opKB_select{
+    background-color:#FFF;
+    margin:4px 3px;
+    vertical-align: baseline;
+    width: 8%;
+    line-height: 35px;
+    height:35px;
+}
+
+#mt_keyboard #mt_area1 img.mt_key_caps{
+    height:20px;
+    padding-top:5px;
+    margin:0px;
+}
+
+
+#mt_area2{
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    height:40px;
+    background-color:#DBDDDE;
+    text-align:center;
+    clear:both;
+    margin: 0px;
+    padding-bottom:0px;
+    border-top:1px solid #c9c9c9;
+    border-radius: 0px 0px 5px 5px;
+}
+
+#mt_keyboard .selectKB{
+    background-color:#a9a9a9;
+}
+
+.scrollarea{
+    overflow-y: scroll;
+}
+
+.mt_keypop{
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top:-0.07em;
+    margin-left:0.7em;
+    width:4.2%;
+    height:60px;
+    background-color:#ddd;
+    font-size:1.2em;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+}
+
+.mt_keypop2{
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top:1.5em;
+    margin-left:0.7em;
+    width:4.2%;
+    height:60px;
+    background-color:#ddd;
+    font-size:1.2em;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+}
+
+.mt_keypop3{
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top:3.2em;
+    margin-left:0.7em;
+    width:4.2%;
+    height:60px;
+    background-color:#ddd;
+    font-size:1.2em;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+}
+
+.mt_keypop3_5{
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top:4.1em;
+    margin-left:2.5em;
+    width:8%;
+    height:60px;
+    background-color:#ddd;
+    font-size:1.2em;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+}
+
+.mt_keypop55{
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top:4.1em;
+    margin-left:2.5em;
+    width:8%;
+    height:60px;
+    background-color:#ddd;
+    font-size:1.2em;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+}
+
+/*#mt_keyboard li:active .mt_keypop, #mt_keyboard li:active .mt_keypop2, #mt_keyboard li:active .mt_keypop3,#mt_keyboard li:active .mt_keypop3_5{
+    display: block;
+}*/
+
+#mt_area2 ul{
+    list-style-type: none;
+    margin: 2px 0px;
+    padding-inline-start:0px;
+    text-align:center;
+}
+
+#mt_area2 li{
+    background-color:#F7F7F7;
+    text-align:center;
+    display: inline-block;
+    margin: 0px 5px 5px 5px;
+    
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+    vertical-align: middle;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+#mt_area2 li:hover{
+    background-color:#C7C7CC;
+    cursor:pointer;
+}
+
+#mt_area2 li.selectKB{
+    background-color:#C7C7CC;
+}
+
+#mt_keyboard #mt_area2 li.mt_area2_li{
+    padding:0px;
+    margin:0px 2px;
+    height:30px;
+    vertical-align: middle;
+    width:8%;
+}
+
+#mt_keyboard #mt_area2 li.mt_area2_li img{
+    height:28px;
+}
+
+
+#mt_area2 li #smallFont{
+    transform: scale( 0.7, 0.7);
+}
+
+#mt_keyboard #mt_area1 li.Special img{
+    height:40px;
+    vertical-align: bottom;
+}
+
+#mt_keyboard #mt_area1 li.Special{
+    display: inline-block;
+    list-style-type: none;
+    box-shadow: none;
+    cursor:pointer;
+    border-radius: none;
+    position: relative;
+    margin: 0;
+    padding: 10px 10px 0px;
+    /*font-size:0.8em;*/
+}
+
+#mt_keyboard #mt_area1 li.Special_msym img{
+    height:30px;
+    vertical-align: bottom;
+}
+
+#mt_keyboard #mt_area1 li.Special_msym {
+    display: inline-block;
+    list-style-type: none;
+    box-shadow: none;
+    cursor:pointer;
+    border-radius: none;
+    position: relative;
+    margin: 0;
+    padding: 10px 5px 0px;
+}
+
+#area2_message{
+    font-size:0.5em;
+    text-align: left;
+    padding-left:5px
+}
+
+
+/* スマホ・タブレット */
+@media screen and (max-width:600px) {
+    #mt_keyboard{
+        touch-action: none;
+    z-index:1000;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin:0 auto;
+    width:100%;
+    height:330px;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    font-weight: 300;
+    font-size:1.2em;
+    margin:0px 0px;
+    padding:0px 0px;
+    border-radius: 0px 0px 0px 0px;
+    border-right:0px;
+    border-left:0px;
+    box-shadow:none;
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+    background-color:#d3d7dc;
+    }
+
+
+    #mt_keyboard #mtkeyboard_inner{
+    position:relative;
+    display: inline-block;
+    width: 100%;
+    height:100%;
+    text-align:center;
+    margin:0px 0px;
+    padding:0px 0px;
+    }
+
+    #mt_keyboard #mtkeyboard_canvas{
+        position:relative;
+        height:45px;
+        vertical-align: middle;
+        width:100%;
+        padding:0px 10px;
+        margin: 0px auto;
+        text-align:center;
+        border-top:0.5px solid #969696;
+        font-size: 0.8em;
+    }
+
+    
+    #mt_keyboard #mtkeyboard_candidates{
+    position:relative;
+    height:45px;
+    line-height: 45px;
+    width:100%;
+    background-color:#F7F7F7;
+    margin: 0px auto;
+    float:left;
+    text-align:left;
+    border-top:0.5px solid #969696;
+    border-bottom:0.5px solid  #969696;
+    font-size: 0.8em;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates #mt_areaR{
+    position; relative;
+    float:right;
+    width:8%;
+    height:100%;
+    margin:0 auto;
+    text-align: center;
+    margin: 0 auto;
+    z-index:100;
+    cursor:pointer;
+    background-color:#E6E6E6;
+    outline:solid 0.5px #969696;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates #mt_areaL{
+    position; relative;
+    float:left;
+    width:90%;
+    z-index:0;
+    }
+
+    .mtcnd_exp{
+        background-size: auto 40px;
+        line-height: 40px;
+        height:100%;
+    }
+
+    .mt_std{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        word-wrap:normal;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates #mtkeyboard_candidates_ul{
+        width:100%;
+        display: flex;
+        position:relative;
+        list-style-type: none;
+        list-style-position:outside;
+        margin: 0;
+        padding:0;
+        float:left;
+        text-align:left;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates #mtkeyboard_candidates_ul li{
+        display:inline-block;
+        float: left;
+        text-align:center;
+        vertical-align: middle;
+        padding: 0px 20px 0px 20px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        list-style: none;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+    }
+
+    img.candidatesStyleIMG{
+        height: 25px;
+        vertical-align:middle;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates li.nomal{
+        background-color:#fff;
+        color:#000;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates li:hover{
+        background-color:#C7C7CC;
+    }
+
+    #mt_keyboard #mtkeyboard_candidates li.selected{
+        background-color:#C7C7CC;
+    }
+
+    #mt_caret{
+        border-right:solid 2px #1e90ff;
+        display: inline-block;
+    }
+
+    img.mt_key-up{
+        height:10px;
+    }
+
+    #mt_keyboard #mt_area1{
+        display: inline-block;
+        margin:0px;
+        padding:0px 0px 200px 0px;
+        clear:both;
+        text-align: center;
+        height:200px;
+        width:100%;
+    }
+
+    #mt_keyboard #mt_area1 ul{
+        margin:0px;
+        padding:0px;
+    }
+    
+    #mt_area2{
+        position: absolute;
+        width: 100%;
+        bottom:0;
+        height:50px;
+        background-color:#ebebf0;
+        text-align:center;
+        clear:both;
+        margin: 0px;
+        padding-bottom:0px;
+        /*border-top:solid 0.5px #969696;*/
+    }
+
+    #mt_keyboard .mt_opKB_arrow{
+        background-color:#afb8c0;
+        margin:4px 3px;
+        vertical-align: baseline;
+        width: 12%;
+        height:30px;
+        line-height: 30px;
+        font-size:0.7em;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    }
+    
+    #mt_keyboard .mt_opKB_enter{
+        background-color:#4aaded;
+        color:#FFF;
+        margin:4px 3px;
+        vertical-align: baseline;
+        width: 13%;
+        height:30px;
+        line-height: 30px;
+        font-size:0.7em;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    }
+    
+    
+    #mt_keyboard .mt_opKBs1{
+        background-color:#afb8c0;
+        margin:5px 3px;
+        vertical-align: baseline;
+        width: 10%;
+        height:35px;
+        font-size:0.8em;
+        line-height:2em;
+    }
+
+    #mt_keyboard .mt_opKBs2{
+        background-color:#afb8c0;
+        margin:5px 3px;
+        vertical-align: baseline;
+        width: 8%;
+        height:35px;
+        font-size:0.8em;
+        line-height:2em;
+    }
+
+    #mt_keyboard .mt_opKBs3{
+        background-color:#afb8c0;
+        margin:5px 3px;
+        vertical-align: baseline;
+        width: 8%;
+        height:35px;
+    }
+
+
+    #mt_keyboard .selectKB{
+        background-color:#afb8c0;
+    }
+
+
+    #mt_keyboard li{
+        display: inline-block;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        cursor:pointer;
+        margin:0px 0px;
+        padding:0px 0px;
+    }
+
+    .scrollarea{
+        overflow-y: scroll;
+        background-color:#ebebf0;
+    }
+
+    #mt_keyboard .mt_key10{
+        background-color:#FFF;
+        font-size:1.1em;
+        padding-top:2px;
+        width:8.2%;
+        height:37px;
+        margin:5px 3px;
+        font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        font-weight:300;
+        vertical-align: middle;
+    }
+    
+    #mt_keyboard .mt_key10 img{
+        width:90%;
+        height: auto;
+        padding-top:3px;
+    }
+    
+    #mt_keyboard .mt_opKB{
+        background-color:#afb8c0;
+        height:37px;
+    }
+    
+    #mt_keyboard .opekeyColor{
+        background-color:#afb8c0;
+    }
+    
+    #mt_keyboard .smallf{
+        font-size:0.8em;
+    }
+
+    #mt_keyboard .mt_key5{
+        background-color:#FFF;
+        width:15%;
+        margin:5px 3px;
+        height:35px;
+        font-size:0.8em;
+        line-height:2em;
+    }
+
+    #mt_keyboard .mt_key3{
+        width:20%;
+        background-color:#C7C7CC;
+        margin:0px 0px;
+        padding:0px 0px;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    #mt_keyboard .mt_key10:active,#mt_keyboard .mt_key5:active,#mt_keyboard .mt_key3:active{
+        background-color:#DBDDDE;
+    }
+
+    .mt_keypop{
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        top:-0.07em;
+        margin-left:0.7em;
+        width:4.2%;
+        height:60px;
+        background-color:#ddd;
+        font-size:1.2em;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+
+    }
+
+
+    .mt_keypop2{
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        top:1.5em;
+        margin-left:0.7em;
+        width:4.2%;
+        height:60px;
+        background-color:#ddd;
+        font-size:1.2em;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+    }
+
+    .mt_keypop3{
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        top:3.2em;
+        margin-left:0.7em;
+        width:4.2%;
+        height:60px;
+        background-color:#ddd;
+        font-size:1.2em;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+    }
+
+    .mt_keypop3_5{
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        top:4.1em;
+        margin-left:2.5em;
+        width:8%;
+        height:60px;
+        background-color:#ddd;
+        font-size:1.2em;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 80% 70%, 49% 100%, 20% 70%, 0% 70%);
+    }
+
+
+    #mt_keyboard li:active .mt_keypop, #mt_keyboard li:active .mt_keypop2, #mt_keyboard li:active .mt_keypop3,#mt_keyboard li:active .mt_keypop3_5{
+        display: block;
+    }
+
+
+    #mt_area2 ul{
+        list-style-type: none;
+        margin: 2px 0px;
+    }
+
+    #mt_area2 li{
+        background-color:#F7F7F7;
+        width:8%;
+        display: inline-block;
+        margin: 0px 5px 5px 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.4);
+        vertical-align: middle;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    #mt_area2 li:hover{
+        background-color:#afb8c0;
+        cursor:pointer;
+    }
+
+    #mt_area2 li.selectKB{
+        background-color:#afb8c0;
+    }
+
+    #mt_area2 #hist li {
+        width:40px;
+        transform: scale( 0.7, 0.7);
+    }
+
+    #mt_area2 li #smallFont{
+        transform: scale( 0.7, 0.7);
+    }
+
+
+    #mt_keyboard #mt_area2 li .mt_key_under{
+        height:15px;
+        padding:0px;
+        margin:0px;
+    }
+}
