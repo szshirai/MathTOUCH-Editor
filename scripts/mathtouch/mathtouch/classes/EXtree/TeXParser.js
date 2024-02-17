@@ -1019,7 +1019,7 @@ MathTOUCH.oeStack = function(extt){
             var ko,key,order;
 			this.evalEMPOperation();
 			for(i=0;i<=this.opStack;i++){
-                tempEx[0]=tempEx[0].spacedOn(new SymbolEXT(2,this.ext[opIndex[i]].word,this.ext[opIndex[i]].word.charAt(0)));/
+                tempEx[0]=tempEx[0].spacedOn(new SymbolEXT(2,this.ext[opIndex[i]].word,this.ext[opIndex[i]].word.charAt(0)));
             }
 		}
 		else{
