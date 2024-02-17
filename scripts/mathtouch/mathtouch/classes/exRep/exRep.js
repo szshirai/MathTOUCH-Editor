@@ -929,7 +929,7 @@ exR.BigBracketEx.prototype.drawEx = function (gra,pt,x,y) {
         MathTOUCH.drawRect(gra,x+this.getSubwidth()+this.getTerm1(0).getWidth()+this.getGap()*2,y-this.getAscent(),this.getOpeWidth(),this.getAscent()+this.getDescent(),this.getOpeFrameColor());
     }
     if(this.getFrameColorNum () > 0){
-        MathTOUCH.drawRect(gra,x,y-this.getAscent(),this.getWidth(),this.getAscent()+this.getDescent(),this.getFrameColor());/
+        MathTOUCH.drawRect(gra,x,y-this.getAscent(),this.getWidth(),this.getAscent()+this.getDescent(),this.getFrameColor());
     }
     MathTOUCH.drawString(gra,this.RepL,x,y+this.getSubBase(),this.getFace(),this.getFontSize(),this.getFont(),this.getOpeColor());
     MathTOUCH.drawString(gra,this.RepR,x+this.getSubwidth()+this.getTerm1(0).getWidth()+this.getGap()*2,y+this.getSubBase(),this.getFace(),this.getFontSize(),this.getFont(),this.getOpeColor());
