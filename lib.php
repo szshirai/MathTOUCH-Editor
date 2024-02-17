@@ -67,7 +67,6 @@ class mathtouch_texteditor extends texteditor {
             'EXtree/EXtree2TeX.js',
             'EXtree/EXtree2MathML.js',
             'EXtree/EXtree2Maxima.js',
-            'EXtree/EXtree2Speech.js',
             'EXtree/EXtree2Maple.js',
             'EXtree/EXtree2Mathematica.js',
             'EXtree/EXtree2Word.js',
