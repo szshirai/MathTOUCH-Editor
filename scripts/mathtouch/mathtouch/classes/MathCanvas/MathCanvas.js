@@ -4,7 +4,6 @@ var mtTEX = new MathTOUCH.EXtree2TeX();
 var mathml = new MathTOUCH.EXtree2MathML();
 var maxima = new MathTOUCH.EXtree2Maxima();
 var maple = new MathTOUCH.EXtree2Maple();
-var SPC = new MathTOUCH.EXtree2Speech();
 var mathematica = new MathTOUCH.EXtree2Mathematica();
 var word = new MathTOUCH.EXtree2Word();
 var NES=new MathTOUCH.NEScore();
@@ -1727,7 +1726,7 @@ MathTOUCH.mathcanvas.prototype.paint = function() {
 
     if(this.checkSubMode(0)){
     }
-    else if(this.checkSubMode(1))
+    else if(this.checkSubMode(1)){
     }
     else if(this.checkSubMode(2)){
         var reps=new Array();
@@ -2543,8 +2542,9 @@ MathTOUCH.mathcanvas.prototype.paintPrediction = function(){
                 this.paint();
         }
     }else{
-    this.setisPPdoing(false);
-    this.setPPid(null);
+        this.setisPPdoing(false);
+        this.setPPid(null);
+    }
 }
 
 MathTOUCH.mathcanvas.prototype.getKey = function(){
