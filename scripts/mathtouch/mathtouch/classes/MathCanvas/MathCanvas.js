@@ -2541,10 +2541,9 @@ MathTOUCH.mathcanvas.prototype.paintPrediction = function(){
                 this.setCandidates_flag(true);
                 this.paint();
         }
-    }else{
-        this.setisPPdoing(false);
-        this.setPPid(null);
-    }
+    }else{}
+    this.setisPPdoing(false);
+    this.setPPid(null);
 }
 
 MathTOUCH.mathcanvas.prototype.getKey = function(){
